@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Omah Ogel — Membangun Rumah Selamanya untuk 190+ Hewan yang Diselamatkan</title>
+<meta name="description" content="Selama 11 tahun, Amy Sukmana merawat lebih dari 190 anjing dan kucing terlantar di Indonesia. Kini kami membangun sanctuary permanen — dan kami butuh bantuanmu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #16A34A;
+  --primary-dark: #15803D;
+  --secondary: #4ADE80;
+  --bg: #F0FDF4;
+  --bg-warm: #DCFCE7;
+  --dark: #14532D;
+  --mid: #166534;
+  --light: #6B7280;
+  --accent: #15803D;
+  --accent-light: #DCFCE7;
+  --white: #FFFFFF;
+  --border: #BBF7D0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--bg); overflow-x: hidden; }
+
+/* ═══ NAVBAR ═══ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 32px;
+  background: rgba(240,253,244,0.97);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(22,163,74,0.10);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+.logo-text { font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 700; color: var(--primary); line-height: 1.1; }
+.logo-sub { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 400; color: var(--light); letter-spacing: 1px; text-transform: uppercase; }
+.nav-links { display: flex; gap: 22px; list-style: none; align-items: center; }
+.nav-links a { text-decoration: none; font-size: 13px; font-weight: 600; color: var(--mid); transition: color 0.2s; position: relative; }
+.nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 2px; background: var(--primary); transition: width 0.3s; }
+.nav-links a:hover { color: var(--primary); }
+.nav-links a:hover::after { width: 100%; }
+.nav-donate { background: var(--primary) !important; color: white !important; padding: 8px 20px; border-radius: 24px; font-weight: 700 !important; transition: background 0.2s !important; }
+.nav-donate:hover { background: var(--primary-dark) !important; }
+.nav-donate::after { display: none !important; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--dark); border-radius: 2px; }
+
+/* MOBILE MENU */
+.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--primary); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 28px; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-family: 'Poppins', sans-serif; font-size: 26px; font-weight: 700; color: var(--white); text-decoration: none; }
+.mobile-close { position: absolute; top: 20px; right: 28px; background: none; border: none; color: white; font-size: 32px; cursor: pointer; }
+.mobile-socials { display: flex; gap: 16px; margin-top: 8px; }
+.mobile-socials a { font-size: 13px; border: 1.5px solid rgba(255,255,255,0.4); padding: 8px 16px; border-radius: 24px; font-family: 'Inter', sans-serif; color: white; text-decoration: none; }
+
+/* ═══ HERO ═══ */
+.hero-bg {
+  position: relative; min-height: 100vh;
+  background: #111;
+  display: flex; flex-direction: column;
+  overflow: hidden;
+}
+.hero-video-container {
+  position: absolute; inset: 0; z-index: 0;
+}
+.hero-video-container video {
+  width: 100%; height: 100%; object-fit: cover; opacity: 0.6;
+}
+.hero-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to top, rgba(20,83,45,0.85) 0%, rgba(20,83,45,0.3) 60%, transparent 100%);
+}
+.hero-content { flex: 1; display: flex; align-items: flex-end; padding: 120px 32px 80px; position: relative; z-index: 2; }
+.hero-tagline { max-width: 620px; }
+.hero-tagline .eyebrow { font-size: 12px; color: var(--secondary); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.hero-tagline .eyebrow::before { content: ''; display: inline-block; width: 32px; height: 2px; background: var(--secondary); }
+.hero-tagline h1 { font-family: 'Poppins', sans-serif; font-size: clamp(36px, 5vw, 58px); font-weight: 800; color: var(--white); line-height: 1.15; margin-bottom: 20px; }
+.hero-tagline h1 .highlight { color: var(--secondary); }
+.hero-tagline p { color: rgba(255,255,255,0.85); font-size: 16px; line-height: 1.75; margin-bottom: 32px; max-width: 520px; }
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--primary); color: white; padding: 14px 28px; border-radius: 32px; font-weight: 700; font-size: 14px; text-decoration: none; transition: all 0.25s; box-shadow: 0 4px 20px rgba(22,163,74,0.4); }
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 6px 28px rgba(22,163,74,0.5); }
+.btn-outline { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: white; padding: 14px 28px; border-radius: 32px; font-weight: 700; font-size: 14px; text-decoration: none; border: 2px solid rgba(255,255,255,0.5); transition: all 0.25s; }
+.btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; transform: translateY(-2px); }
+.scroll-indicator { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 6px; color: rgba(255,255,255,0.6); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; animation: float 2s ease-in-out infinite; }
+.scroll-indicator::after { content: '↓'; font-size: 18px; color: rgba(255,255,255,0.5); }
+@keyframes float { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+
+/* ═══ STATS BAR ═══ */
+.stats-bar { background: var(--dark); padding: 22px 32px; }
+.stats-inner { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 16px; }
+.stat { text-align: center; color: var(--white); }
+.stat strong { display: block; font-family: 'Poppins', sans-serif; font-size: 30px; font-weight: 800; color: var(--secondary); }
+.stat span { font-size: 13px; opacity: 0.75; }
+
+/* ═══ HELPERS ═══ */
+section { padding: 80px 32px; }
+.container { max-width: 1100px; margin: 0 auto; }
+.btn-yellow { display: inline-flex; align-items: center; gap: 8px; background: var(--secondary); color: var(--dark); padding: 12px 28px; border-radius: 32px; font-weight: 700; font-size: 13px; letter-spacing: 0.5px; text-decoration: none; transition: all 0.2s; margin-top: 16px; }
+.btn-yellow:hover { background: #22c55e; transform: translateY(-2px); }
+.btn-accent { background: var(--accent) !important; color: white !important; box-shadow: 0 4px 16px rgba(22,163,74,0.3); }
+.btn-accent:hover { background: #138F3C !important; }
+.btn-white { display: inline-flex; align-items: center; gap: 8px; background: var(--white); color: var(--dark); padding: 12px 28px; border-radius: 32px; font-weight: 700; font-size: 13px; text-decoration: none; transition: all 0.2s; margin-top: 16px; }
+.btn-white:hover { opacity: 0.9; transform: translateY(-2px); }
+.section-label { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--primary); margin-bottom: 12px; }
+.section-title { font-family: 'Poppins', sans-serif; font-size: clamp(26px, 3.5vw, 36px); font-weight: 700; line-height: 1.3; margin-bottom: 16px; }
+.section-title span { color: var(--primary); }
+.section-desc { font-size: 16px; line-height: 1.8; color: #374151; max-width: 680px; }
+
+/* Fade-up animation */
+.fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* ═══ STORY (Ogel) ═══ */
+.latar { background: var(--dark); color: var(--white); }
+.latar .section-title span { color: var(--secondary); }
+.latar .section-title { color: var(--white); }
+.latar .section-desc { color: rgba(255,255,255,0.82); max-width: 100%; }
+.latar-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.feature-chip { display: flex; gap: 14px; align-items: flex-start; background: rgba(255,255,255,0.07); border-radius: 12px; padding: 18px; margin-bottom: 12px; border: 1px solid rgba(255,255,255,0.1); transition: background 0.2s; }
+.feature-chip:hover { background: rgba(22,163,74,0.15); }
+.chip-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+.chip-text { font-size: 14px; line-height: 1.65; opacity: 0.92; color: rgba(255,255,255,0.88); }
+.chip-text strong { color: var(--secondary); }
+.latar-video { border-radius: 16px; overflow: hidden; background: rgba(0,0,0,0.3); height: 100%; min-height: 500px; box-shadow: 0 24px 60px rgba(0,0,0,0.4); }
+.latar-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ig-btn { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366); color: white; padding: 10px 20px; border-radius: 8px; font-weight: 700; font-size: 13px; text-decoration: none; margin-top: 12px; transition: all 0.2s; }
+.ig-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+/* ═══ AMY PROFILE ═══ */
+.amy-section { background: var(--bg-warm); }
+.amy-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.amy-videos { display: grid; gap: 16px; }
+.amy-video-wrap { border-radius: 14px; overflow: hidden; box-shadow: 0 12px 40px rgba(22,163,74,0.15); }
+.amy-video-wrap video { width: 100%; display: block; max-height: 280px; object-fit: cover; }
+
+/* ═══ WHY WE LEFT ═══ */
+.why-section { background: var(--white); }
+.why-video-wrap { border-radius: 16px; overflow: hidden; box-shadow: 0 16px 48px rgba(0,0,0,0.12); }
+.why-video-wrap video { width: 100%; display: block; }
+.why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.why-video-col { order: 1; }
+.why-text-col  { order: 2; }
+
+@media (max-width: 768px) {
+  .why-inner { grid-template-columns: 1fr; gap: 28px; }
+  .why-video-col { order: 2; }
+  .why-text-col  { order: 1; }
+}
+.timeline-mini { margin-top: 28px; }
+.tl-mini-item { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
+.tl-mini-dot { width: 40px; height: 40px; border-radius: 50%; background: var(--primary); color: white; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 13px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.tl-mini-dot.accent { background: var(--accent); }
+.tl-mini-content .tl-date { font-size: 11px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
+.tl-mini-content .tl-title { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 3px; }
+.tl-mini-content .tl-desc { font-size: 13px; color: #4B5563; line-height: 1.6; }
+
+/* ═══ TRANSFORMASI ═══ */
+.transformasi { background: var(--bg); }
+.transform-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 32px; }
+.transform-card { border-radius: 12px; overflow: hidden; aspect-ratio: 1; background: var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s; }
+.transform-card:hover { transform: scale(1.03); }
+.transform-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ═══ CTA REMINDER ═══ */
+.cta-reminder { background: var(--bg-warm); padding: 36px 32px; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+/* ═══ SHELTER PLAN ═══ */
+.shelter-dream { background: var(--white); text-align: center; }
+.shelter-header { margin-bottom: 36px; }
+.shelter-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+.shelter-img-wrap { border-radius: 14px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.10); }
+.shelter-img-wrap img { width: 100%; height: auto; max-height: 500px; object-fit: cover; display: block; }
+.shelter-caption { text-align: center; font-size: 13px; color: var(--light); margin-top: 10px; font-weight: 600; }
+
+/* ═══ CONSTRUCTION PHOTOS ═══ */
+.construction-section { background: var(--bg-warm); }
+.construction-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+.construction-img-wrap { border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; }
+.construction-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+.construction-img-wrap:hover img { transform: scale(1.04); }
+.land-cert { border-radius: 14px; overflow: hidden; max-width: 420px; margin: 0 auto 24px; box-shadow: 0 8px 32px rgba(0,0,0,0.12); border: 3px solid var(--accent); }
+.land-cert img { width: 100%; display: block; }
+.land-cert-label { text-align: center; font-size: 13px; font-weight: 700; color: var(--accent); margin-top: 10px; letter-spacing: 0.5px; text-transform: uppercase; }
+
+/* ═══ DANA / RENCANA ═══ */
+.dana { background: var(--dark); color: var(--white); }
+.dana .section-title { color: var(--white); }
+.dana .section-title span { color: var(--secondary); }
+.dana-hero-number { text-align: center; background: rgba(74,222,128,0.15); border-radius: 16px; padding: 28px; margin-bottom: 36px; border: 1px solid rgba(74,222,128,0.3); }
+.dana-amount { display: block; font-family: 'Poppins', sans-serif; font-size: 40px; font-weight: 800; color: var(--secondary); }
+.dana-label { font-size: 14px; opacity: 0.75; margin-top: 6px; display: block; }
+.stages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.stage-card { background: rgba(255,255,255,0.06); border-radius: 14px; padding: 28px; border: 1px solid rgba(255,255,255,0.1); transition: border-color 0.2s; }
+.stage-card:hover { border-color: rgba(74,222,128,0.4); }
+.stage-num { font-family: 'Poppins', sans-serif; font-size: 40px; font-weight: 800; color: rgba(74,222,128,0.35); line-height: 1; margin-bottom: 10px; }
+.stage-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: var(--white); }
+.stage-price { font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 700; color: var(--secondary); margin-bottom: 16px; }
+.stage-items { list-style: none; padding: 0; }
+.stage-items li { font-size: 13px; line-height: 1.65; opacity: 0.8; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.stage-items li:last-child { border: none; }
+.stage-badge { display: inline-block; padding: 4px 12px; border-radius: 24px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; margin-top: 12px; }
+.badge-done { background: var(--accent); color: white; }
+.badge-open { background: var(--primary); color: white; }
+
+/* Progress dashboard */
+.progress-dashboard { background: rgba(255,255,255,0.05); border-radius: 16px; padding: 28px; margin: 28px 0; border: 1px solid rgba(255,255,255,0.1); }
+.progress-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+.progress-stat { text-align: center; }
+.progress-stat .p-label { font-size: 11px; font-weight: 600; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.progress-stat .p-value { font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 800; color: var(--secondary); }
+.progress-stat .p-usd { font-size: 12px; opacity: 0.55; margin-top: 2px; }
+.progress-bar-wrap { margin-top: 4px; }
+.progress-bar-label { display: flex; justify-content: space-between; font-size: 13px; opacity: 0.7; margin-bottom: 8px; }
+.progress-bar-track { background: rgba(255,255,255,0.1); border-radius: 8px; height: 12px; overflow: hidden; }
+.progress-bar-fill { height: 100%; border-radius: 8px; background: linear-gradient(90deg, var(--primary), var(--secondary)); transition: width 1s ease; }
+.disclaimer-box { background: rgba(22,163,74,0.1); border-radius: 12px; padding: 16px 20px; border-left: 4px solid var(--accent); margin-top: 20px; font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.65; }
+
+/* ═══ KEGIATAN ═══ */
+.kegiatan { background: var(--bg); text-align: center; }
+.kegiatan-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 36px; }
+.activity-card { background: var(--white); border-radius: 14px; padding: 24px 16px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid var(--border); transition: all 0.3s; }
+.activity-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(22,163,74,0.12); border-color: var(--primary); }
+.activity-icon { font-size: 36px; margin-bottom: 12px; }
+.activity-title { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+.activity-desc { font-size: 12px; color: #4B5563; line-height: 1.55; }
+
+/* ═══ GALLERY ═══ */
+.gallery { background: var(--bg-warm); }
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 28px; }
+.gallery-item { border-radius: 12px; overflow: hidden; aspect-ratio: 1; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.35s; }
+.gallery-item:hover img { transform: scale(1.06); }
+
+/* ═══ TRANSPARANSI ═══ */
+.transparansi { background: var(--primary); color: var(--white); text-align: center; }
+.transparansi .section-title { color: var(--white); }
+.transparansi .section-title span { color: var(--secondary); }
+.trans-items { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 28px; }
+.trans-item { background: rgba(255,255,255,0.15); border-radius: 32px; padding: 12px 22px; display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; border: 1px solid rgba(255,255,255,0.25); }
+
+/* ═══ LOKASI ═══ */
+.lokasi { background: var(--white); }
+.lokasi-address-card { background: var(--bg-warm); border-radius: 16px; padding: 28px 32px; max-width: 640px; margin: 24px auto 0; display: flex; gap: 20px; align-items: flex-start; border: 1px solid var(--border); }
+.lokasi-address-icon { font-size: 32px; flex-shrink: 0; }
+.lokasi-address-badge { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--primary); margin-bottom: 8px; }
+.lokasi-address-main { font-size: 16px; font-weight: 700; color: var(--dark); line-height: 1.5; margin-bottom: 12px; }
+.lokasi-wa-link { display: inline-flex; align-items: center; gap: 6px; background: #25D366; color: white; padding: 8px 18px; border-radius: 24px; font-weight: 700; font-size: 13px; text-decoration: none; transition: opacity 0.2s; }
+.lokasi-wa-link:hover { opacity: 0.85; }
+
+/* ═══ TIMELINE ═══ */
+.timeline-section { background: var(--bg-warm); }
+.timeline { max-width: 720px; margin: 0 auto; position: relative; }
+.timeline::before { content: ''; position: absolute; left: 24px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+.tl-item { display: flex; gap: 24px; margin-bottom: 32px; position: relative; }
+.tl-dot { width: 48px; height: 48px; border-radius: 50%; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; flex-shrink: 0; position: relative; z-index: 1; font-family: 'Poppins', sans-serif; }
+.tl-final .tl-dot { background: var(--accent); font-size: 20px; }
+.tl-date { font-size: 12px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+.tl-title { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+.tl-desc { font-size: 14px; color: #4B5563; line-height: 1.6; }
+
+/* ═══ PROGRESS VIDEO ═══ */
+.progress-section { background: var(--dark); color: var(--white); }
+.progress-section .section-title { color: var(--white); }
+.progress-section .section-desc { color: rgba(255,255,255,0.75); }
+.vid-carousel { position: relative; max-width: 720px; margin: 32px auto 0; }
+.vid-stage { position: relative; border-radius: 16px; overflow: hidden; background: rgba(0,0,0,0.3); }
+.vid-slide { display: none; }
+.vid-slide.active { display: block; }
+.vid-slide video { width: 100%; display: block; max-height: 420px; object-fit: cover; }
+.vid-slide img  { width: 100%; display: block; max-height: 420px; object-fit: cover; }
+.vid-caption { background: rgba(0,0,0,0.65); color: white; font-size: 13px; font-weight: 600; padding: 12px 16px; }
+.vid-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); border: none; color: white; font-size: 22px; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+.vid-arrow:hover { background: var(--primary); }
+.vid-arrow-left { left: 12px; }
+.vid-arrow-right { right: 12px; }
+.vid-dots { display: flex; justify-content: center; gap: 8px; margin-top: 14px; }
+.vid-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.3); cursor: pointer; transition: background 0.2s; }
+.vid-dot.active { background: var(--secondary); }
+
+/* ═══ DONASI ═══ */
+.donasi { background: var(--primary); color: var(--white); text-align: center; }
+.donasi .section-title { color: var(--white); }
+.donasi .section-title span { color: var(--secondary); }
+.rekening-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 900px; margin: 32px auto; }
+.rek-card { background: rgba(255,255,255,0.14); border-radius: 16px; padding: 28px 24px; text-align: center; border: 1px solid rgba(255,255,255,0.2); transition: background 0.2s; }
+.rek-card:hover { background: rgba(255,255,255,0.20); }
+.rek-bank { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.75); margin-bottom: 10px; }
+.rek-num { font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 700; color: var(--secondary); margin-bottom: 6px; letter-spacing: 1px; }
+.rek-name { font-size: 13px; color: rgba(255,255,255,0.65); }
+.wa-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--secondary); color: var(--dark); padding: 16px 36px; border-radius: 32px; font-weight: 800; font-size: 16px; text-decoration: none; margin-top: 16px; transition: all 0.2s; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+.wa-btn:hover { background: #22c55e; transform: translateY(-2px); }
+
+/* ═══ FINAL CTA ═══ */
+.final-cta { background: var(--bg-warm); }
+.final-cta-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+.final-cta .section-title { color: var(--dark); }
+.final-cta-content { font-size: 16px; line-height: 1.85; color: #374151; margin-bottom: 36px; }
+.final-cta-content p { margin-bottom: 14px; }
+.final-cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.final-cta-btns .btn-primary { font-size: 15px; padding: 16px 32px; }
+
+/* ═══ SOSMED ═══ */
+.sosmed { background: var(--white); text-align: center; }
+.sosmed-title { font-family: 'Poppins', sans-serif; font-size: 30px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+.sosmed-sub { font-size: 15px; color: #4B5563; margin-bottom: 28px; line-height: 1.7; }
+.sosmed-links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
+.sosmed-link { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 32px; font-weight: 700; font-size: 14px; text-decoration: none; transition: all 0.2s; }
+.sosmed-link:hover { opacity: 0.85; transform: translateY(-2px); }
+.sosmed-link.ig { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; }
+.sosmed-link.fb { background: #1877F2; color: white; }
+.sosmed-link.tt { background: var(--dark); color: white; }
+.qr-wrap { margin-top: 24px; }
+.qr-label { font-size: 13px; font-weight: 600; color: #4B5563; margin-bottom: 12px; }
+.qr-img { width: 140px; height: auto; display: block; margin: 0 auto; border-radius: 10px; border: 3px solid var(--border); }
+.qr-handle { font-size: 13px; font-weight: 700; color: var(--primary); margin-top: 8px; }
+
+/* ═══ TESTIMONIAL SLIDER ═══ */
+.testimony { background: var(--bg-warm); overflow: hidden; }
+.testimony .section-title { color: var(--dark); }
+.testi-track-wrap { position: relative; max-width: 860px; margin: 40px auto 0; }
+.testi-track { display: flex; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
+.testi-card { min-width: 100%; padding: 0 8px; box-sizing: border-box; }
+.testi-inner { background: var(--white); border-radius: 18px; padding: 36px 40px; position: relative; border-left: 5px solid var(--primary); box-shadow: 0 8px 32px rgba(0,0,0,0.07); }
+.testi-quote { font-size: 72px; line-height: 0.6; color: #BBF7D0; font-family: 'Poppins', sans-serif; margin-bottom: 16px; display: block; }
+.testi-text { font-size: 16px; line-height: 1.8; color: #374151; font-style: italic; margin-bottom: 24px; }
+.testi-author { display: flex; align-items: center; gap: 14px; }
+.testi-avatar { width: 50px; height: 50px; border-radius: 50%; background: var(--primary); color: white; font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.testi-name { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 15px; color: var(--dark); }
+.testi-role { font-size: 12px; color: var(--light); margin-top: 2px; }
+.testi-nav { display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 24px; }
+.testi-btn { background: none; border: 2px solid var(--border); color: var(--primary); width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+.testi-btn:hover { background: var(--primary); border-color: var(--primary); color: white; }
+.testi-dots-row { display: flex; gap: 8px; }
+.testi-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); cursor: pointer; transition: background 0.2s; border: none; }
+.testi-dot.active { background: var(--primary); }
+
+/* ═══ GUESTBOOK ═══ */
+.guestbook { background: var(--bg); }
+.guestbook .section-title { color: var(--dark); }
+.gb-form { background: var(--white); border-radius: 18px; padding: 36px; margin-bottom: 40px; box-shadow: 0 4px 28px rgba(0,0,0,0.07); border: 1px solid var(--border); }
+.gb-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.gb-form label { display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--light); margin-bottom: 6px; }
+.gb-form input, .gb-form textarea {
+  width: 100%; padding: 12px 16px; border: 1.5px solid var(--border); border-radius: 10px;
+  font-family: 'Inter', sans-serif; font-size: 14px; color: var(--dark);
+  background: var(--bg); transition: border-color 0.2s; resize: none; outline: none;
+}
+.gb-form input:focus, .gb-form textarea:focus { border-color: var(--primary); }
+.gb-form textarea { height: 100px; }
+.gb-submit { background: var(--primary); color: white; border: none; padding: 12px 32px; border-radius: 32px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 14px; cursor: pointer; transition: all 0.2s; margin-top: 4px; }
+.gb-submit:hover { background: var(--primary-dark); transform: translateY(-2px); }
+.gb-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+.gb-list { display: flex; flex-direction: column; gap: 16px; }
+.gb-entry { background: var(--white); border-radius: 14px; padding: 22px 24px; border-left: 4px solid var(--secondary); box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+.gb-entry-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; flex-wrap: wrap; gap: 6px; }
+.gb-entry-name { font-weight: 700; font-size: 15px; color: var(--primary); }
+.gb-entry-date { font-size: 12px; color: var(--light); font-weight: 600; }
+.gb-entry-text { font-size: 14px; line-height: 1.7; color: #4B5563; }
+.gb-empty { text-align: center; padding: 40px; color: var(--light); font-size: 15px; }
+.gb-toast { display: none; background: var(--accent); color: white; border-radius: 10px; padding: 12px 20px; margin-bottom: 16px; font-size: 14px; font-weight: 600; }
+.gb-toast.show { display: block; }
+.gb-loading { text-align: center; padding: 24px; color: var(--light); font-size: 14px; }
+
+@media (max-width: 768px) {
+  .gb-form-row { grid-template-columns: 1fr; }
+  .testi-inner { padding: 28px 24px; }
+  .latar-text { text-align: center; }
+  .latar-text a { display: inline-flex; justify-content: center; margin-left: 0 !important; }
+}
+
+/* ═══ FOOTER ═══ */
+footer { background: var(--dark); color: var(--white); padding: 40px 32px 28px; text-align: center; }
+footer p { font-size: 13px; opacity: 0.65; line-height: 1.7; }
+footer span { font-weight: 700; color: var(--secondary); }
+
+/* ═══ FLOATING WA ═══ */
+.floating-wa { position: fixed; bottom: 24px; right: 24px; background: #25D366; color: white; padding: 12px 22px; border-radius: 32px; font-weight: 700; font-size: 14px; text-decoration: none; box-shadow: 0 4px 24px rgba(37,211,102,0.4); z-index: 998; transition: all 0.2s; }
+.floating-wa:hover { opacity: 0.9; transform: translateY(-2px); }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .hero-tagline h1 { font-size: 32px; }
+  .latar-inner, .amy-inner, .why-inner, .stages, .rekening-grid { grid-template-columns: 1fr; }
+  .kegiatan-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .transform-grid { grid-template-columns: repeat(2, 1fr); }
+  .shelter-imgs { grid-template-columns: 1fr; }
+  .construction-grid { grid-template-columns: repeat(2, 1fr); }
+  .progress-row { grid-template-columns: repeat(2, 1fr); }
+  section { padding: 56px 20px; }
+  .stats-inner { gap: 20px; }
+  .final-cta-btns { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="https://res.cloudinary.com/dvigvyoxo/image/upload/v1777893004/logo_x8jufc.jpg" alt="Omah Ogel" class="logo-img" onerror="this.style.display='none'">
+    <div>
+      <div class="logo-text">Omah Ogel</div>
+      <div class="logo-sub">Penyelamatan & Sanctuary Hewan</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Beranda</a></li>
+    <li><a href="#story">Cerita Kami</a></li>
+    <li><a href="#dana">Rencana Pembangunan</a></li>
+    <li><a href="#progress">Progres</a></li>
+    <li><a href="#donate">Donasi</a></li>
+    <li><a href="#guestbook">Buku Tamu</a></li>
+    <li><a href="#donate" class="nav-donate">❤️ Bantu Sekarang</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+  <a href="index.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Beranda</a>
+  <a href="#story" onclick="document.getElementById('mobileMenu').classList.remove('open')">Cerita Kami</a>
+  <a href="#dana" onclick="document.getElementById('mobileMenu').classList.remove('open')">Rencana Pembangunan</a>
+  <a href="#progress" onclick="document.getElementById('mobileMenu').classList.remove('open')">Progres</a>
+  <a href="#donate" onclick="document.getElementById('mobileMenu').classList.remove('open')">Donasi</a>
+  <div class="mobile-socials">
+    <a href="https://www.instagram.com/amysukmana" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/amy.sukmana" target="_blank">Facebook</a>
+  </div>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero-bg">
+  <div class="hero-video-container">
+    <video autoplay muted loop playsinline id="heroVideo">
+      <source src="https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780932632/VID-20260608-WA0035_x8zugk.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content container">
+    <div class="hero-tagline fade-up">
+      <div class="eyebrow">Omah Ogel Animal Sanctuary · Indonesia</div>
+      <h1>
+        190+ Hewan yang Diselamatkan.<br>
+        <span class="highlight">Satu Misi yang Mendesak.</span>
+      </h1>
+      <p>Selama 11 tahun, Amy Sukmana menjadi pelindung bagi anjing dan kucing terlantar di sebuah shelter sewaan. Lalu segalanya berubah.<br><br>Pada April 2026, Omah Ogel hanya diberi waktu enam minggu untuk memindahkan hampir 190 hewan. Kini kami sedang membangun sanctuary permanen — tempat mereka akhirnya bisa punya rumah yang benar-benar milik sendiri.</p>
+      <div class="hero-btns">
+        <a href="#story" class="btn-primary">❤️ Baca Kisah Mereka</a>
+        <a href="https://www.instagram.com/amysukmana?igsh=eHozZjRoYW9nc2V3" target="_blank" class="btn-outline">🐾 Ikuti Perjalanan Ini</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">gulir</div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat"><strong>150+</strong><span>Anjing yang Diselamatkan 🐶</span></div>
+    <div class="stat"><strong>40+</strong><span>Kucing dalam Perawatan 🐱</span></div>
+    <div class="stat"><strong>11+ Tahun</strong><span>Penyelamatan Tanpa Henti</span></div>
+    <div class="stat"><strong>100+</strong><span>Berhasil Diadopsi</span></div>
+  </div>
+</div>
+
+<!-- ═══ KISAH OGEL ═══ -->
+<section class="latar" id="story">
+  <div class="container latar-inner">
+    <div class="latar-text fade-up">
+      <span class="section-label">🐾 Awal Mula</span>
+      <h2 class="section-title">
+        Anjing yang <span>Mengubah Segalanya</span>
+      </h2>
+      <p class="section-desc" style="margin-bottom: 24px;">Dari Seekor Anak Anjing, Menjadi Lebih dari 190 Nyawa.</p>
+
+      <div class="feature-chip">
+        <span class="chip-icon">🐕</span>
+        <div class="chip-text">
+          Sebelum ada shelter. Sebelum ada misi penyelamatan. Sebelum ada 190 anjing dan kucing — semua bermula dari <strong>seekor anak anjing kecil.</strong>
+        </div>
+      </div>
+
+      <div class="feature-chip">
+        <span class="chip-icon">💛</span>
+        <div class="chip-text">
+          8 Tahun yang lalu, Amy Sukmana menemukan seekor anak anjing jantan sendirian di sebidang tanah kosong. Induknya dan saudara-saudaranya telah tiada karena Parvovirus. Dia satu-satunya yang selamat. <strong>Amy pun membawanya pulang.</strong>
+        </div>
+      </div>
+
+      <div class="feature-chip">
+        <span class="chip-icon">✨</span>
+        <div class="chip-text">
+          Biaya perawatan dokter hewan hampir menguras seluruh tabungan Amy saat itu. Tapi menyerah bukan pilihan. Anak anjing itu bertahan. Amy menamainya <strong>Ogel.</strong> Satu tindakan penyelamatan itu mengubah segalanya.
+        </div>
+      </div>
+
+      <div class="feature-chip">
+        <span class="chip-icon">🏡</span>
+        <div class="chip-text">
+          Dari satu tindakan penuh kasih, lahirlah <strong>Omah Ogel</strong> — sanctuary yang kini merawat lebih dari 190 hewan terlantar.
+        </div>
+      </div>
+
+      <a href="https://www.instagram.com/amysukmana?igsh=eHozZjRoYW9nc2V3" target="_blank" class="ig-btn">
+        📸 Ikuti Perjalanan Kami
+      </a>
+      <a href="#donate" class="btn-primary" style="margin-left: 10px; margin-top: 12px; text-decoration: none;">
+        ❤️ Bantu Wujudkan Masa Depan Mereka
+      </a>
+    </div>
+
+    <div class="latar-video">
+      <video autoplay muted loop playsinline>
+        <source src="https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780993193/lv_0_20260609151201_m91x6l.mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SIAPA AMY SUKMANA ═══ -->
+<section class="amy-section">
+  <div class="container amy-inner">
+    <div class="amy-videos fade-up">
+      <div class="amy-video-wrap">
+        <video autoplay muted loop playsinline>
+          <source src="https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780932821/VID-20260510-WA0000_1_j87uzw.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="amy-video-wrap" style="margin-top:0">
+        <video autoplay muted loop playsinline>
+          <source src="https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780933786/lv_0_20260608224756_bk28pv.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <div class="fade-up">
+      <span class="section-label">👩 Sang Pendiri</span>
+      <h2 class="section-title">Perempuan di Balik <span>Omah Ogel</span></h2>
+      <p class="section-desc" style="margin-bottom: 20px;">
+        Amy Sukmana dikenal luas di komunitas penyelamat hewan Indonesia sebagai sosok yang tidak pernah ragu untuk membantu.
+      </p>
+      <div class="feature-chip" style="background: var(--bg-warm); border: 1px solid var(--border);">
+        <span class="chip-icon">🤝</span>
+        <div class="chip-text" style="color: #4B5563;">
+          Selama 11 tahun, ia mendukung sesama penyelamat, berbagi makanan dan sumber daya dengan shelter yang kesulitan, serta memberikan panduan bagi mereka yang menghadapi situasi penyelamatan yang sulit.
+        </div>
+      </div>
+      <div class="feature-chip" style="background: var(--bg-warm); border: 1px solid var(--border);">
+        <span class="chip-icon">💼</span>
+        <div class="chip-text" style="color: #4B5563;">
+          <strong style="color:var(--dark)">Sementara banyak shelter bergantung pada donasi publik,</strong> Amy selama bertahun-tahun menghidupi Omah Ogel dari usahanya sendiri — termasuk <a href="https://www.instagram.com/dapur_ibu_amy" target="_blank" style="color:var(--primary); font-weight:700; text-decoration:none;">Dapur Ibu Amy</a> (Katering Nasi Box), dan <strong style="color:var(--dark)">Lilo Transpet & Petshop</strong> (layanan hewan peliharaan dan transportasi hewan).
+        </div>
+      </div>
+      <div class="feature-chip" style="background: var(--bg-warm); border: 1px solid var(--border);">
+        <span class="chip-icon">🌟</span>
+        <div class="chip-text" style="color: #4B5563;">
+          Sembari membantu banyak orang lain, Amy jarang meminta pertolongan untuk dirinya sendiri. Kini, usaha-usaha itulah yang terus menopang Omah Ogel dan <strong style="color:var(--primary)">hampir 190 hewan yang bergantung padanya.</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MENGAPA HARUS PINDAH ═══ -->
+<section class="why-section" id="why">
+  <div class="container why-inner">
+    <div class="why-video-wrap fade-up why-video-col">
+      <video autoplay muted loop playsinline style="width:100%; display:block;">
+        <source src="https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780926878/lv_0_20260608205304_b0alkm.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="fade-up why-text-col">
+      <span class="section-label">📋 Kisahnya</span>
+      <h2 class="section-title">Dari Tempat Sewaan Menuju <span>Rumah Selamanya</span></h2>
+
+<p class="section-desc" style="margin-bottom: 24px;">
+Lebih dari 11 tahun, Amy mendedikasikan hidupnya untuk menyelamatkan anjing dan kucing yang membutuhkan pertolongan. Dalam perjalanan itu, ia berpindah dari satu tempat sewaan ke tempat lain — kerap menghadapi penggusuran dan penolakan dari warga sekitar.
+</p>
+
+<p class="section-desc" style="margin-bottom: 24px;">
+Selama enam tahun terakhir, Omah Ogel beroperasi dari sebuah tempat sewa di Depok, Jawa Barat — menjadi surga bagi ratusan hewan yang tidak punya ke mana lagi pergi.
+</p>
+
+      <div class="timeline-mini">
+        <div class="tl-mini-item">
+          <div class="tl-mini-dot">!</div>
+          <div class="tl-mini-content">
+            <div class="tl-date">4 April 2026</div>
+            <div class="tl-title">Surat Peringatan Datang</div>
+            <div class="tl-desc">Merespons keberatan warga sekitar, Omah Ogel diminta untuk pindah — dengan waktu hanya enam minggu untuk memindahkan hampir 190 hewan.</div>
+          </div>
+        </div>
+        <div class="tl-mini-item">
+          <div class="tl-mini-dot">💛</div>
+          <div class="tl-mini-content">
+            <div class="tl-date">Keputusan</div>
+            <div class="tl-title">Meninggalkan Mereka Bukan Pilihan</div>
+            <div class="tl-desc">Banyak dari hewan-hewan ini sudah tua, cacat, atau masih dalam pemulihan. Mereka pernah ditinggalkan sekali — dan itu tidak akan terjadi lagi.</div>
+          </div>
+        </div>
+        <div class="tl-mini-item">
+          <div class="tl-mini-dot accent">🏡</div>
+          <div class="tl-mini-content">
+            <div class="tl-date">Langkah Nyata</div>
+            <div class="tl-title">Sebidang Tanah 1.051 m² di Bogor</div>
+            <div class="tl-desc">Dengan tabungan pribadi yang dikumpulkan bertahun-tahun, Amy membeli tanah tersebut. Untuk pertama kalinya, Omah Ogel punya tanah sendiri — tempat di mana hewan-hewan itu tidak perlu pindah lagi.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRANSFORMASI ═══ -->
+<section class="transformasi">
+  <div class="container">
+    <div style="text-align:center" class="fade-up">
+      <span class="section-label">✨ Kisah Nyata Perubahan</span>
+      <h2 class="section-title" style="color:var(--dark)">Mereka Hampir Tidak Selamat. <span>Lihat Mereka Sekarang.</span></h2>
+      <p class="section-desc" style="margin: 0 auto;">Setiap foto sebelum-sesudah mewakili sebuah nyawa yang hampir berakhir di jalanan. Ada yang datang dalam kondisi sakit. Ada yang terluka. Ada yang sudah kehilangan harapan. Hari ini, mereka sehat, aman, dan dicintai.</p>
+    </div>
+    <div class="transform-grid">
+      <div class="transform-card"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934031/billy_vdjp5j_nnryil.jpg" alt="Billy" loading="lazy"></div>
+      <div class="transform-card"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934031/emily_espyo6_b8vlze.jpg" alt="Emily" loading="lazy"></div>
+      <div class="transform-card"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934030/berry_kat5uq_zactzr.jpg" alt="Berry" loading="lazy"></div>
+      <div class="transform-card"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934030/nia_vu6cqx_1_sunjul.jpg" alt="Nia" loading="lazy"></div>
+      <div class="transform-card"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934030/change_wuwija_cj1pzo.jpg" alt="Change" loading="lazy"></div>
+      <div class="transform-card"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934030/hiro_ld80wi_kbmuld.jpg" alt="Hiro" loading="lazy"></div>
+      <div class="transform-card"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934030/boba_wptzon_wcniol.jpg" alt="Boba" loading="lazy"></div>
+      <div class="transform-card"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934030/angel_pjvsa8_lggssy.jpg" alt="Angel" loading="lazy"></div>
+    </div>
+    <div style="text-align:center; margin-top:24px;">
+      <a href="https://www.instagram.com/amysukmana?igsh=eHozZjRoYW9nc2V3" target="_blank" class="btn-yellow">🐾 Lihat Lebih Banyak Kisah Penyelamatan</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA REMINDER -->
+<div class="cta-reminder">
+  <a href="#donate" class="btn-primary">❤️ Bantu Bangun Rumah Mereka Selamanya</a>
+</div>
+
+<!-- ═══ MEMBANGUN RUMAH MEREKA ═══ -->
+<section class="construction-section">
+  <div class="container">
+    <div style="text-align:center; margin-bottom: 40px;" class="fade-up">
+      <span class="section-label">🏗️ Sanctuary</span>
+      <h2 class="section-title" style="color:var(--dark)">Tanahnya Sudah Ada. <span>Kini Saatnya Membangun.</span></h2>
+      <p class="section-desc" style="margin: 0 auto;">Berbeda dengan banyak kampanye penggalangan dana, tanah ini sudah dibeli menggunakan tabungan pribadi Amy. Di atas lahan seluas 1.051 m² di Kabupaten Bogor, kami sedang membangun sanctuary yang aman, manusiawi, dan permanen untuk anjing dan kucing yang diselamatkan.</p>
+    </div>
+    <div class="land-cert">
+      <img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780967475/IMG_20260608_200609_pf2oc2.png" alt="Sertifikat Tanah">
+    </div>
+    <p class="land-cert-label">✅ Sertifikat Tanah Resmi — Atas Nama Amy</p>
+    <p class="section-desc" style="text-align:center; margin: 16px auto 32px; font-size:14px; color:var(--light);">Kandang bambu sementara sudah dibangun untuk perlindungan segera. Kini kami tengah membangun fasilitas inti yang dibutuhkan untuk perawatan jangka panjang.</p>
+    <div class="construction-grid">
+      <div class="construction-img-wrap"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934459/IMG-20260603-WA0020_gslcdx.jpg" alt="Progres Pembangunan" loading="lazy"></div>
+      <div class="construction-img-wrap"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934458/IMG-20260603-WA0030_asllrb.jpg" alt="Progres Pembangunan" loading="lazy"></div>
+      <div class="construction-img-wrap"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934458/IMG-20260603-WA0019_auroqz.jpg" alt="Progres Pembangunan" loading="lazy"></div>
+      <div class="construction-img-wrap"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934456/IMG-20260607-WA0024_gpyjm7.jpg" alt="Progres Pembangunan" loading="lazy"></div>
+      <div class="construction-img-wrap"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934456/IMG-20260530-WA0037_gufl1z.jpg" alt="Progres Pembangunan" loading="lazy"></div>
+      <div class="construction-img-wrap"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934720/IMG_20260603_123412_ooszoq.jpg" alt="Progres Pembangunan" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RENCANA SHELTER ═══ -->
+<section class="shelter-dream">
+  <div class="container">
+    <div class="shelter-header fade-up">
+      <span class="section-label">🏗️ Desainnya</span>
+      <h2 class="section-title" style="color:var(--dark)">Beginilah Wujud <span>Rumah</span> Mereka Nanti</h2>
+      <p class="section-desc" style="margin: 0 auto 20px;">Di atas lahan ±1.051 m² di Desa Kalongliud, Nanggung, Kabupaten Bogor — kami membangun sanctuary yang aman, manusiawi, dan permanen bagi setiap hewan yang menyebut Omah Ogel sebagai rumahnya.</p>
+      <p>
+  <span style="font-size:1.35rem; font-weight:700; color:var(--primary);">
+    Dengan dana yang terbatas dan keharusan pindah sebelum pertengahan Juni 2026, kami harus bergerak cepat menemukan solusi.
+  </span>
+</p>
+
+<p>
+  <strong>Pada April 2026,</strong> kami membeli sebidang tanah dari warga setempat. Lahan itu dipenuhi semak belukar lebat dan ratusan pohon bambu.
+</p>
+
+<p>
+  Saat memandangi tanah itu,
+  <strong><em>muncullah sebuah gagasan.</em></strong>
+</p>
+
+<p>
+  Alih-alih membersihkan semuanya, kami memutuskan untuk memanfaatkan sumber daya alam yang sudah ada di sana. Ratusan batang bambu diubah dengan cermat menjadi kandang-kandang sederhana dan pagar keliling untuk para hewan.
+</p>
+
+<p>
+  Mungkin ini bukan sanctuary impian yang kami bayangkan suatu hari nanti, tapi ia memberikan sesuatu yang jauh lebih penting saat ini:
+  <strong><em>keamanan, kestabilan, dan sebuah tempat permanen yang bisa disebut</em></strong>
+  <strong style="color:var(--primary);">RUMAH</strong>.
+</p>
+
+<p>
+  Untuk 3–5 tahun ke depan, anjing dan kucing yang kami selamatkan tidak perlu lagi hidup di bawah bayang-bayang penggusuran, pemindahan, atau ketidakpastian. Setelah bertahun-tahun berpindah dari satu tempat sewaan ke tempat lain, akhirnya mereka punya tempat untuk tinggal, pulih, dan merasa memiliki.
+</p>
+    </div>
+
+    <div class="construction-grid" style="margin-top: 32px;">
+      <div class="construction-img-wrap"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780974583/IMG-20260603-WA0014_t6ogg2.jpg" alt="Kandang Bambu" loading="lazy"></div>
+      <div class="construction-img-wrap"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780974582/IMG-20260603-WA0023_imtuiy.jpg" alt="Kandang Bambu" loading="lazy"></div>
+      <div class="construction-img-wrap"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780974581/IMG-20260603-WA0011_eyoysj.jpg" alt="Kandang Bambu" loading="lazy"></div>
+      <div class="construction-img-wrap"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780974581/IMG-20260603-WA0013_fbqelj.jpg" alt="Kandang Bambu" loading="lazy"></div>
+    </div>
+
+    <div class="shelter-imgs" style="margin-top: 28px; grid-template-columns: 1fr;">
+      <div>
+        <div class="shelter-img-wrap">
+          <img src="https://res.cloudinary.com/dvigvyoxo/image/upload/f_auto,q_auto,w_1200/v1777894208/lokasi_mcbvcz.jpg" alt="Peta Lokasi" loading="lazy">
+        </div>
+        <p class="shelter-caption">📍 Lokasi Lahan — Desa Kalongliud, Nanggung, Kabupaten Bogor</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RENCANA PEMBANGUNAN / DANA ═══ -->
+<section class="dana" id="dana">
+  <div class="container">
+    <div style="text-align:center; margin-bottom: 28px;" class="fade-up">
+      <span class="section-label" style="color:var(--secondary)">💰 Progres Pembangunan</span>
+      <h2 class="section-title">Membangun Masa Depan Mereka, <span>Selangkah demi Selangkah</span></h2>
+    </div>
+
+    <div class="progress-dashboard fade-up">
+      <div class="progress-row">
+        <div class="progress-stat">
+          <div class="p-label">Total Anggaran</div>
+          <div class="p-value">Rp 765.000.000</div>
+        </div>
+        <div class="progress-stat">
+          <div class="p-label">Sudah Terkumpul</div>
+          <div class="p-value" style="color:#86efac;">Rp 323.489.500</div>
+        </div>
+        <div class="progress-stat">
+          <div class="p-label">Sudah Diinvestasikan</div>
+          <div class="p-value" style="color:#fbbf24;">Rp 367.156.000</div>
+        </div>
+        <div class="progress-stat">
+          <div class="p-label">Masih Dibutuhkan</div>
+          <div class="p-value" style="color:#f87171;">Rp 397.844.000</div>
+        </div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-label">
+          <span>Total Progres</span>
+          <span>42% Terpenuhi</span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" style="width: 42%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin: 32px 0 20px;">
+      <span class="section-label" style="color:var(--secondary)">📋 Yang Sedang Kami Bangun</span>
+    </div>
+
+    <div class="stages">
+      <div class="stage-card">
+        <div class="stage-num">01</div>
+        <div class="stage-title">🚧 Kandang Sementara dari Bambu</div>
+        <div class="stage-price">Rp 74.000.000</div>
+        <ul class="stage-items">
+          <li>4 kandang bambu, masing-masing 5×8 m²</li>
+          <li>Rp 18.500.000 per unit × 4</li>
+          <li>Target: Rp 74.000.000</li>
+          <li>Terkumpul: Rp 74.000.000</li>
+          <li>Pembangunan dimulai: 05/05/26</li>
+        </ul>
+        <span class="stage-badge badge-done">✅ Selesai</span>
+      </div>
+      <div class="stage-card">
+        <div class="stage-num">02</div>
+        <div class="stage-title">🏠 Pagar Keliling & Rumah Kennel</div>
+        <div class="stage-price">Rp 553.000.000</div>
+        <ul class="stage-items">
+          <li>Rumah kennel staf 8×12 m²</li>
+          <li>Biaya konstruksi & pagar bambu</li>
+          <li>Semen, bata & material bangunan</li>
+          <li>Paving block untuk jalur internal</li>
+          <li>Target: Rp 553.000.000</li>
+          <li>Terkumpul: Rp 169.995.000</li>
+          <li>Masih kurang: Rp 383.005.000</li>
+        </ul>
+        <span class="stage-badge badge-open">🔓 Donasi Dibuka</span>
+      </div>
+      <div class="stage-card">
+        <div class="stage-num">03</div>
+        <div class="stage-title">⚡ Utilitas & Infrastruktur</div>
+        <div class="stage-price">Rp 138.000.000</div>
+        <ul class="stage-items">
+          <li>Instalasi listrik & penerangan</li>
+          <li>2 sumur air bersih</li>
+          <li>4 septic tank</li>
+          <li>Ruang penyimpanan daging beku</li>
+          <li>Target: Rp 138.000.000</li>
+          <li>Terkumpul: Rp 63.994.500</li>
+          <li>Masih kurang: Rp 74.005.500</li>
+        </ul>
+        <span class="stage-badge badge-open">🔓 Donasi Dibuka</span>
+      </div>
+    </div>
+
+    <div class="disclaimer-box">
+      <strong>🔍 Transparansi Penuh:</strong> Kampanye ini secara khusus ditujukan untuk pembangunan sanctuary dan infrastruktur. Donasi tidak digunakan untuk pembelian tanah, operasional bisnis, atau keperluan pribadi. Tanah dibeli sepenuhnya dari tabungan pribadi Amy.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ APA YANG KAMI LAKUKAN ═══ -->
+<section class="kegiatan">
+  <div class="container">
+    <div style="text-align:center" class="fade-up">
+      <span class="section-label">🐾 Yang Kami Lakukan Setiap Hari</span>
+      <h2 class="section-title" style="color:var(--dark)">Kerja Nyata. <span>Dampak Nyata.</span></h2>
+      <p class="section-desc" style="margin: 0 auto;">190+ hewan dalam perawatan saat ini. 150+ anjing yang diselamatkan, 40+ kucing yang diselamatkan. Ratusan kasus penyelamatan sejak 2019.</p>
+    </div>
+    <div class="kegiatan-grid">
+      <div class="activity-card">
+        <div class="activity-icon">🚑</div>
+        <div class="activity-title">Penyelamatan Darurat</div>
+        <div class="activity-desc">Menyelamatkan hewan-hewan terlantar, terluka, tua, dan bayi baru lahir dari jalanan Indonesia</div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-icon">💊</div>
+        <div class="activity-title">Perawatan Medis</div>
+        <div class="activity-desc">Penanganan intensif dan perawatan pemulihan penuh untuk setiap hewan yang datang ke sini</div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-icon">💉</div>
+        <div class="activity-title">Steril & Vaksinasi</div>
+        <div class="activity-desc">Program berkelanjutan untuk menjaga kesehatan hewan dan mengendalikan populasi terlantar</div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-icon">🏡</div>
+        <div class="activity-title">Program Adopsi</div>
+        <div class="activity-desc">Seleksi ketat untuk memastikan setiap hewan pergi ke rumah yang aman dan penuh kasih sayang</div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-icon">🍼</div>
+        <div class="activity-title">Perawatan Bayi Anjing & Kucing</div>
+        <div class="activity-desc">Merawat anak-anak anjing dan kucing yang ditinggalkan — diberi susu botol setiap saat dengan penuh cinta</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GALERI ═══ -->
+<section class="gallery">
+  <div class="container">
+    <div style="text-align:center" class="fade-up">
+      <span class="section-label">📸 Kehidupan di Omah Ogel</span>
+      <h2 class="section-title" style="color:var(--dark)">Momen yang Layak <span>Diperjuangkan</span></h2>
+      <p class="section-desc" style="margin: 0 auto;">Di balik setiap penyelamatan, ada sebuah cerita. Di balik setiap cerita, ada kesempatan kedua.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dvigvyoxo/image/upload/f_auto,q_auto,w_900/v1777897614/amy1_mzaey1.jpg" alt="Amy bersama hewan" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dyvav3opv/image/upload/f_auto,q_auto,w_900/v1779264183/amy_vmo2bc.jpg" alt="Amy" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dyvav3opv/image/upload/f_auto,q_auto,w_900/v1778912360/IMG-20260515-WA0018_ukxdsn.jpg" alt="Progres Shelter" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dvigvyoxo/image/upload/f_auto,q_auto,w_900/v1777897615/amy3_lr88bw.jpg" alt="Amy" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dvigvyoxo/image/upload/f_auto,q_auto,w_900/v1777897971/amy4_en3jip.jpg" alt="Amy" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dvigvyoxo/image/upload/f_auto,q_auto,w_900/v1777897617/amy5_hmuuyc.jpg" alt="Amy" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dvigvyoxo/image/upload/f_auto,q_auto,w_900/v1777897618/amy6_oa52ou.jpg" alt="Amy" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://res.cloudinary.com/dyvav3opv/image/upload/f_auto,q_auto,w_900/v1779694275/IMG-20260525-WA0005_wfjgq6.jpg" alt="Amy dan hewan" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRANSPARANSI ═══ -->
+<section class="transparansi">
+  <div class="container fade-up">
+    <span class="section-label" style="color:rgba(255,255,255,0.75)">🔍 Komitmen Kami</span>
+    <h2 class="section-title">Komitmen Kami untuk <span>Transparansi</span></h2>
+    <p class="section-desc" style="margin: 0 auto; color: rgba(255,255,255,0.85);">Kami percaya para pendukung berhak melihat dengan jelas apa yang sedang dibangun dari kebaikan hati mereka. Setiap rupiah didokumentasikan dan dibagikan secara terbuka.</p>
+    <div class="trans-items">
+      <div class="trans-item">📸 Update Pembangunan</div>
+      <div class="trans-item">📊 Laporan Pengeluaran</div>
+      <div class="trans-item">🎥 Video Progres</div>
+      <div class="trans-item">📱 Update Media Sosial</div>
+      <div class="trans-item">🤝 Komunikasi Langsung dengan Pendukung</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LOKASI ═══ -->
+<section class="lokasi">
+  <div class="container" style="text-align:center">
+    <span class="section-label">📍 Tempat Kami</span>
+    <h2 class="section-title" style="color:var(--dark)">Temukan <span>Kami</span></h2>
+    <div class="lokasi-address-card">
+      <div class="lokasi-address-icon">🏠</div>
+      <div class="lokasi-address-body">
+        <div class="lokasi-address-badge">Sanctuary Permanen Baru</div>
+        <div class="lokasi-address-main">Desa Kalongliud, Nanggung<br>Kabupaten Bogor, Jawa Barat, Indonesia</div>
+        <a href="https://wa.me/6287762022232" target="_blank" class="lokasi-wa-link">💬 WhatsApp: +62 877-6202-2232</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TIMELINE ═══ -->
+<section class="timeline-section">
+  <div class="container">
+    <div style="text-align:center; margin-bottom: 40px;" class="fade-up">
+      <span class="section-label">📅 Linimasa Pembangunan</span>
+      <h2 class="section-title" style="color:var(--dark)">Perjalanan Menuju <span>Rumah Baru Mereka</span></h2>
+      <p class="section-desc" style="margin: 0 auto;">Dari surat penggusuran hingga sanctuary permanen — setiap langkah perjalanan ini kami dokumentasikan.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot">!</div>
+        <div class="tl-content">
+          <div class="tl-date">April 2026</div>
+          <div class="tl-title">Surat Pindah Diterima & Persiapan Lahan Dimulai</div>
+          <div class="tl-desc">Omah Ogel menerima pemberitahuan untuk pindah dalam enam minggu. Amy membeli lahan 1.051 m² di Kabupaten Bogor. Pembersihan lahan langsung dimulai.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">2</div>
+        <div class="tl-content">
+          <div class="tl-date">Mei – Juni 2026</div>
+          <div class="tl-title">Kandang Sementara · Utilitas · Pagar Keliling</div>
+          <div class="tl-desc">4 kandang bambu selesai dibangun. Listrik, sumur air, dan septic tank terpasang. Pagar keliling penuh sudah berdiri.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">3</div>
+        <div class="tl-content">
+          <div class="tl-date">Juni – Juli 2026</div>
+          <div class="tl-title">Pembangunan Rumah Kennel · Fasilitas Operasional</div>
+          <div class="tl-desc">Pembangunan rumah kennel permanen 8×12 m² — jantung operasional sanctuary.</div>
+        </div>
+      </div>
+      <div class="tl-item tl-final">
+        <div class="tl-dot">🏡</div>
+        <div class="tl-content">
+          <div class="tl-date">Terus Berjalan</div>
+          <div class="tl-title">Perluasan & Penyempurnaan</div>
+          <div class="tl-desc">Perbaikan berkelanjutan untuk memberikan hewan-hewan tempat tinggal jangka panjang yang terbaik. Ini baru permulaan.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ UPDATE LANGSUNG / VIDEO PROGRES ═══ -->
+<section class="progress-section" id="progress">
+  <div class="container">
+    <div style="text-align:center; margin-bottom: 32px;" class="fade-up">
+      <span class="section-label" style="color:var(--secondary)">🎬 Update Langsung</span>
+      <h2 class="section-title">Saksikan Sanctuary Ini <span style="color:var(--secondary)">Terbentuk</span></h2>
+      <p class="section-desc" style="margin: 12px auto 0; color: rgba(255,255,255,0.75);">Setiap bata, setiap tiang, setiap momen — kami dokumentasikan untukmu. Karena kamu berhak melihat dengan mata kepala sendiri apa yang sedang dibangun dari dukunganmu.</p>
+    </div>
+    <div class="vid-carousel" id="vidCarousel">
+      <div class="vid-stage" id="vidStage">
+        <button class="vid-arrow vid-arrow-left" id="vidPrev">&#8592;</button>
+
+        <div class="vid-slide active">
+          <video muted loop playsinline preload="metadata"><source src="https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780934936/VID-20260608-WA0022_n4qwqf.mp4" type="video/mp4"></video>
+          <div class="vid-caption">🎬 Hari 0 — Menemukan Rumah</div>
+        </div>
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata"><source src="https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780935057/VID-20260608-WA0037_kol8fk.mp4" type="video/mp4"></video>
+          <div class="vid-caption">🎬 Hari 1 — Pembangunan Dimulai</div>
+        </div>
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata"><source src="https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780935132/VID-20260608-WA0036_n6lyx1.mp4" type="video/mp4"></video>
+          <div class="vid-caption">🎬 Hari 2 — Mulai Berdiri</div>
+        </div>
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata"><source src="https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780935240/VID-20260608-WA0038_np3e86.mp4" type="video/mp4"></video>
+          <div class="vid-caption">🎬 Hari 3 — Update Progres</div>
+        </div>
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata"><source src="https://res.cloudinary.com/dk9txys8r/video/upload/v1780819105/lv_0_20260607145103_gpl30h.mp4" type="video/mp4"></video>
+          <div class="vid-caption">🎬 Update: 06 Jun 2026 — Progres Terbaru</div>
+        </div>
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata"><source src="https://res.cloudinary.com/dk9txys8r/video/upload/v1780819130/lv_0_20260607144737_pigu5v.mp4" type="video/mp4"></video>
+          <div class="vid-caption">🎬 Update: 06 Jun 2026 — Progres Terbaru</div>
+        </div>
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata"><source src="https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780316351/lv_0_20260601191817_jugcub.mp4" type="video/mp4"></video>
+          <div class="vid-caption">🎬 Update: 01 Jun 2026 — Progres Rumah Kennel & Toilet</div>
+        </div>
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata"><source src="https://res.cloudinary.com/dyvav3opv/video/upload/v1779807819/lv_0_20260526215515_n2zbbu.mp4" type="video/mp4"></video>
+          <div class="vid-caption">🎬 Update: 26 Mei 2026 — Rangka Rumah Kennel</div>
+        </div>
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata"><source src="https://res.cloudinary.com/dyvav3opv/video/upload/v1779260355/lv_0_20260520135646_egf9ob.mp4" type="video/mp4"></video>
+          <div class="vid-caption">🎬 Update: 18 Mei 2026 — Kandang Naik & Pagar Terpasang</div>
+        </div>
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata"><source src="https://res.cloudinary.com/dyvav3opv/video/upload/v1779260604/VID-20260516-WA0016_f7ouce.mp4" type="video/mp4"></video>
+          <div class="vid-caption">🎬 Update: 17 Mei 2026 — Kandang Pertama Selesai!</div>
+        </div>
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata"><source src="https://res.cloudinary.com/dyvav3opv/video/upload/v1778575751/lv_0_20260512154137_xkdsw2.mp4" type="video/mp4"></video>
+          <div class="vid-caption">🎬 Update: 11 Mei 2026 — Pengeboran Sumur Dimulai</div>
+        </div>
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata"><source src="https://res.cloudinary.com/dyvav3opv/video/upload/v1778573933/VID-20260512-WA0007_hx0mqv.mp4" type="video/mp4"></video>
+          <div class="vid-caption">🎬 Update: 12 Mei 2026 — Pagar Keliling Penuh Terpasang</div>
+        </div>
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata"><source src="https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780316238/lv_0_20260601191331_o0gukz.mp4" type="video/mp4"></video>
+          <div class="vid-caption">🎬 Update: 01 Jun 2026 — Progres di Lokasi</div>
+        </div>
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata"><source src="https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780316244/lv_0_20260601191140_gapeai.mp4" type="video/mp4"></video>
+          <div class="vid-caption">🎬 Update: 01 Jun 2026 — Sanctuary Mulai Terbentuk</div>
+        </div>
+        <div class="vid-slide">
+          <img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780974582/IMG-20260603-WA0019_1_ggsdfn.jpg" alt="Update Konstruksi" loading="lazy">
+          <div class="vid-caption">📸 03 Jun 2026 — Progres Pembangunan</div>
+        </div>
+        <div class="vid-slide">
+          <img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780974582/IMG-20260603-WA0017_khuqpq.jpg" alt="Update Konstruksi" loading="lazy">
+          <div class="vid-caption">📸 03 Jun 2026 — Struktur Bambu Mulai Berdiri</div>
+        </div>
+        <div class="vid-slide">
+          <img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934459/IMG-20260603-WA0020_gslcdx.jpg" alt="Update Konstruksi" loading="lazy">
+          <div class="vid-caption">📸 03 Jun 2026 — Membangun Sanctuary</div>
+        </div>
+        <div class="vid-slide">
+          <img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934458/IMG-20260603-WA0030_asllrb.jpg" alt="Update Konstruksi" loading="lazy">
+          <div class="vid-caption">📸 03 Jun 2026 — Fondasi & Rangka</div>
+        </div>
+
+        <button class="vid-arrow vid-arrow-right" id="vidNext">&#8594;</button>
+      </div>
+      <div class="vid-dots" id="vidDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DONASI ═══ -->
+<section class="donasi" id="donate">
+  <div class="container">
+    <span class="section-label" style="color:rgba(255,255,255,0.7)">❤️ Wujudkan Bersama</span>
+    <h2 class="section-title">
+      Setiap Kontribusi Membantu Mewujudkan
+      <span>Rumah Selamanya Mereka</span>
+    </h2>
+    <p class="section-desc" style="margin: 0 auto; color: rgba(255,255,255,0.85);">Tidak ada donasi yang terlalu kecil. Tanah sudah diamankan. Pembangunan sudah berjalan. Hewan-hewan sudah mulai pindah. Kini kami butuh bantuanmu untuk menyelesaikan apa yang telah dimulai.</p>
+
+    <div class="rekening-grid">
+      <div class="rek-card">
+        <div class="rek-bank">🏦 BCA (Indonesia)</div>
+        <div class="rek-num">0670021424</div>
+        <div class="rek-name">a/n Lala Karmila</div>
+      </div>
+      <div class="rek-card">
+        <div class="rek-bank">🏦 Mandiri (Indonesia)</div>
+        <div class="rek-num">1010005462278</div>
+        <div class="rek-name">a/n Lala Karmila</div>
+      </div>
+      <div class="rek-card" style="cursor:pointer;" onclick="window.open('https://www.paypal.me/amysukmana29','_blank')">
+        <div class="rek-bank">💳 PayPal (Internasional)</div>
+        <div class="rek-num" style="font-size:15px;">paypal.me/amysukmana29</div>
+        <div class="rek-name" style="margin-bottom:14px;">Donasi dari Luar Negeri Diterima</div>
+        <a href="https://www.paypal.me/amysukmana29" target="_blank" style="display:inline-block; background:#0070BA; color:white; padding:8px 20px; border-radius:24px; font-weight:700; font-size:13px; text-decoration:none;">Donasi via PayPal →</a>
+      </div>
+    </div>
+
+    <a href="https://wa.me/6287762022232" target="_blank" class="wa-btn">
+      💬 Hubungi Amy Langsung
+    </a>
+    <p style="color: rgba(255,255,255,0.45); margin-top: 12px; font-size: 13px;">
+      Amy Sukmana — Pendiri, Omah Ogel
+    </p>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONI ═══ -->
+<section class="testimony" id="testimony">
+  <div class="container">
+    <div style="text-align:center" class="fade-up">
+      <span class="section-label">💛 Komunitas</span>
+      <h2 class="section-title">Apa Kata Mereka <span>Tentang Amy</span></h2>
+      <p class="section-desc" style="margin: 0 auto;">Kerja keras Amy telah menyentuh banyak hati — baik manusia maupun hewan.</p>
+    </div>
+    <div class="testi-track-wrap">
+      <div class="testi-track" id="testiTrack">
+
+        <div class="testi-card">
+          <div class="testi-inner">
+            <span class="testi-quote">"</span>
+            <p class="testi-text">Saya mengenal Amy bertahun-tahun, dan apa yang ia lakukan sungguh luar biasa. Ia memberikan segalanya — waktu, uang, dan hatinya — untuk hewan-hewan yang terlupakan oleh dunia. Saya belum pernah bertemu seseorang dengan cinta yang semurni dan setulus itu untuk makhluk-makhluk yang tidak bisa berbicara.</p>
+            <div class="testi-author">
+              <div class="testi-avatar">R</div>
+              <div>
+                <div class="testi-name">Rina Kusuma</div>
+                <div class="testi-role">Sahabat & Relawan, Jakarta</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-inner">
+            <span class="testi-quote">"</span>
+            <p class="testi-text">Saat anjing saya terluka dan saya tidak tahu harus ke mana, Amy langsung membantu — tanpa pertanyaan, tanpa biaya, hanya kebaikan murni. Ada ketenangan dalam dirinya yang membuat kamu percaya bahwa semua akan baik-baik saja. Omah Ogel tidak akan ada tanpa energi seperti itu.</p>
+            <div class="testi-author">
+              <div class="testi-avatar">D</div>
+              <div>
+                <div class="testi-name">Dian Pratiwi</div>
+                <div class="testi-role">Pengadopsi & Pendukung Setia</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-inner">
+            <span class="testi-quote">"</span>
+            <p class="testi-text">Saya pernah menjadi relawan di Omah Ogel selama tiga bulan, dan pengalaman itu mengubah hidup saya. Amy bekerja dari subuh hingga tengah malam, tujuh hari seminggu, tanpa pernah mengeluh. Ia merawat setiap hewan seolah-olah hewan itu adalah yang paling penting di dunia. Itu langka. Itu nyata.</p>
+            <div class="testi-author">
+              <div class="testi-avatar">B</div>
+              <div>
+                <div class="testi-name">Budi Santoso</div>
+                <div class="testi-role">Mantan Relawan, Bogor</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-inner">
+            <span class="testi-quote">"</span>
+            <p class="testi-text">Amy menyelamatkan seekor anjing lumpuh yang sudah tiga dokter hewan angkat tangan. Ia merawatnya selama lima bulan tanpa anggaran apapun. Anjing itu kini tinggal bersama keluarga yang menyayanginya di Bandung. Itulah Amy — ia tidak pernah menyerah.</p>
+            <div class="testi-author">
+              <div class="testi-avatar">S</div>
+              <div>
+                <div class="testi-name">Sari Wulandari</div>
+                <div class="testi-role">Sesama Aktivis Penyelamat, Depok</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-inner">
+            <span class="testi-quote">"</span>
+            <p class="testi-text">Kami mengadopsi dua kucing dari Omah Ogel tahun lalu. Amy meluangkan dua jam bersama kami untuk memastikan kami benar-benar cocok — begitu ia peduli. Enam bulan kemudian, ia masih menanyakan kabar kucing-kucing kami. Rasa cintanya tidak berhenti saat mereka meninggalkan shelter. Cinta itu ikut pulang bersama mereka.</p>
+            <div class="testi-author">
+              <div class="testi-avatar">F</div>
+              <div>
+                <div class="testi-name">Farhan & Mei Lim</div>
+                <div class="testi-role">Pengadopsi, Singapura</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="testi-nav">
+        <button class="testi-btn" id="testiPrev">&#8592;</button>
+        <div class="testi-dots-row" id="testiDots"></div>
+        <button class="testi-btn" id="testiNext">&#8594;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BUKU TAMU ═══ -->
+<section class="guestbook" id="guestbook">
+  <div class="container">
+    <div style="text-align:center; margin-bottom: 36px;" class="fade-up">
+      <span class="section-label">📖 Buku Tamu</span>
+      <h2 class="section-title">Tinggalkan <span>Pesan Cinta</span></h2>
+      <p class="section-desc" style="margin: 0 auto;">Setiap pesan mengingatkan kami bahwa kasih sayang tidak mengenal batas. Tinggalkan nama dan beberapa kata untuk Amy, para hewan, atau siapa pun yang singgah di halaman ini.</p>
+    </div>
+
+    <div class="gb-form">
+      <div id="gbToast" class="gb-toast">🐾 Terima kasih! Pesanmu sudah terkirim.</div>
+      <div class="gb-form-row">
+        <div>
+          <label for="gbName">Nama (atau nama samaran) *</label>
+          <input type="text" id="gbName" placeholder="mis. Pecinta Anjing dari Surabaya" maxlength="60">
+        </div>
+        <div>
+          <label for="gbCountry">Kota / Negara</label>
+          <input type="text" id="gbCountry" placeholder="mis. Jakarta, Indonesia" maxlength="60">
+        </div>
+      </div>
+      <div>
+        <label for="gbMsg">Pesanmu *</label>
+        <textarea id="gbMsg" placeholder="Tulis sesuatu yang baik — untuk Amy, untuk para hewan, atau untuk siapa pun yang membaca ini..." maxlength="500"></textarea>
+      </div>
+      <button class="gb-submit" id="gbSubmit" onclick="submitGuestbook()">✉️ Kirim Pesanku</button>
+    </div>
+
+    <div id="gbListWrap">
+      <div class="gb-loading" id="gbLoading">Memuat pesan...</div>
+      <div class="gb-list" id="gbList" style="display:none"></div>
+      <div class="gb-empty" id="gbEmpty" style="display:none">🐾 Belum ada pesan — jadilah yang pertama!</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FINAL CTA ═══ -->
+<section class="final-cta">
+  <div class="container">
+    <div class="final-cta-inner fade-up">
+      <span class="section-label">❤️ Bergabung dalam Misi Ini</span>
+      <h2 class="section-title">Seekor Anak Anjing <span>yang Memulai Segalanya</span></h2>
+      <div class="final-cta-content">
+        <p>8 Tahun yang lalu, seekor anak anjing kecil bernama Ogel ditemukan sendirian, sakit, dan berjuang untuk hidup. Amy memilih untuk tidak berlalu begitu saja.</p>
+        <p>Satu tindakan penuh kasih itu akhirnya tumbuh menjadi Omah Ogel — sanctuary yang kini melindungi lebih dari 190 hewan yang diselamatkan.</p>
+        <p>Hari ini, hewan-hewan itu menggantungkan harapan pada sebuah rumah baru. Tanahnya sudah dibeli. Pembangunan sedang berjalan. Mereka sudah mulai pindah.</p>
+        <p><strong>Sekarang kami butuh bantuanmu untuk menyelesaikan apa yang telah dimulai.</strong></p>
+        <p>Setiap kontribusi — besar maupun kecil — membawa sanctuary ini selangkah lebih dekat menuju rampung. Bersama, kita bisa membangun tempat di mana hewan-hewan yang diselamatkan tidak perlu lagi bertanya-tanya di mana mereka seharusnya berada.</p>
+      </div>
+      <div class="final-cta-btns">
+        <a href="#donate" class="btn-primary">❤️ Bantu Bangun Rumah Selamanya Mereka</a>
+        <a href="https://wa.me/6287762022232" target="_blank" class="btn-white" style="color: var(--dark); border: 2px solid var(--border); text-decoration:none; display:inline-flex; align-items:center; gap:8px; padding:16px 32px; border-radius:32px; font-weight:700; font-size:15px; transition:all 0.2s;">💬 Hubungi Amy</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MEDIA SOSIAL ═══ -->
+<section class="sosmed">
+  <div class="container">
+    <h3 class="sosmed-title">Ikuti Perjalanan Mereka 🐾</h3>
+    <p class="sosmed-sub">Kisah penyelamatan setiap hari. Update pembangunan. Transformasi para hewan.<br>Setiap langkah menuju sanctuary permanen.</p>
+    <div class="sosmed-links">
+      <a href="https://www.instagram.com/amysukmana?igsh=eHozZjRoYW9nc2V3" target="_blank" class="sosmed-link ig">📸 Instagram @amysukmana</a>
+      <a href="https://www.facebook.com/amy.sukmana" target="_blank" class="sosmed-link fb">👍 Facebook — Amy Sukmana</a>
+      <a href="https://www.tiktok.com/@bogelrafaelbebendutsukm7" target="_blank" class="sosmed-link tt">🎵 TikTok — Omah Ogel</a>
+    </div>
+
+    <div class="vid-carousel" id="actCarousel" style="max-width:720px; margin: 0 auto 32px;">
+      <div class="vid-stage" id="actStage">
+        <button class="vid-arrow vid-arrow-left" id="actPrev">&#8592;</button>
+        <div class="vid-slide active">
+          <video muted loop playsinline preload="auto">
+            <source src="https://res.cloudinary.com/dyvav3opv/video/upload/v1778385528/VID-20260510-WA0000_bmvh3i.mp4" type="video/mp4">
+          </video>
+          <div class="vid-caption" style="background:rgba(0,0,0,0.6); color:white;">🎬 Kisah penyelamatan: 9 anjing ditinggal saat pemiliknya yang berusia 70 tahun dilarikan ke rumah sakit</div>
+        </div>
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata">
+            <source src="https://res.cloudinary.com/dyvav3opv/video/upload/v1776054005/VID-20260413-WA0001_ytejic.mp4" type="video/mp4">
+          </video>
+          <div class="vid-caption" style="background:rgba(0,0,0,0.6); color:white;">🎬 Keseharian di Omah Ogel — momen-momen kebahagiaan, satu penyelamatan dalam satu waktu</div>
+        </div>
+        <button class="vid-arrow vid-arrow-right" id="actNext">&#8594;</button>
+      </div>
+      <div class="vid-dots" id="actDots"></div>
+    </div>
+
+    <div class="qr-wrap">
+      <p class="qr-label">Scan untuk Follow di Instagram</p>
+      <a href="https://www.instagram.com/amysukmana" target="_blank">
+        <img src="https://res.cloudinary.com/dvigvyoxo/image/upload/q_auto/f_auto/v1779687244/Gemini_Generated_Image_vqzt12vqzt12vqzt_nxphvj.png" alt="QR Instagram" class="qr-img" onerror="this.style.display='none'">
+      </a>
+      <p class="qr-handle">@amysukmana</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <p>© 2026 <span>Omah Ogel</span> · Didirikan oleh Amy Sukmana · Depok, Jawa Barat, Indonesia 🐾</p>
+  <p style="margin-top:8px">Dibuat dengan ❤️ untuk setiap hewan yang berhak mendapatkan hidup yang layak</p>
+</footer>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/6287762022232" target="_blank" class="floating-wa">💬 Hubungi Amy</a>
+
+<script>
+// ═══ FADE-UP OBSERVER ═══
+(function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+})();
+
+// ═══ HERO VIDEO SWAP ═══
+(function() {
+  const videos = [
+    'https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780932632/VID-20260608-WA0035_x8zugk.mp4',
+    'https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780932633/VID-20260608-WA0034_wmc30r.mp4',
+    'https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780975280/Perjalanan_Joy_dari_Mulai_Rescue_sampe_berhasil_di_bawa_pulang.._menjalani_1_x_amputasi_dua_kaki_xamzoc.mp4'
+  ];
+  let current = 0;
+  const heroVid = document.getElementById('heroVideo');
+  if (!heroVid) return;
+  setInterval(() => {
+    current = (current + 1) % videos.length;
+    heroVid.style.opacity = '0';
+    setTimeout(() => {
+      heroVid.src = videos[current];
+      heroVid.play().catch(() => {});
+      heroVid.style.opacity = '0.6';
+    }, 600);
+  }, 12000);
+})();
+
+// ═══ CAROUSEL ═══
+function initCarousel(stageId, prevId, nextId, dotsId, autoPlay) {
+  const stage = document.getElementById(stageId);
+  if (!stage) return;
+  const slides = stage.querySelectorAll('.vid-slide');
+  const dotsContainer = document.getElementById(dotsId);
+  let current = 0;
+  let autoTimer = null;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'vid-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => { goTo(i); resetAuto(); });
+    dotsContainer.appendChild(dot);
+  });
+
+  function goTo(n) {
+    const oldVideo = slides[current].querySelector('video');
+    if (oldVideo) { oldVideo.pause(); oldVideo.currentTime = 0; }
+    dotsContainer.children[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides.forEach(s => s.classList.remove('active'));
+    slides[current].classList.add('active');
+    dotsContainer.children[current].classList.add('active');
+    const newVideo = slides[current].querySelector('video');
+    if (newVideo) newVideo.play().catch(() => {});
+  }
+
+  document.getElementById(prevId).addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+  document.getElementById(nextId).addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+
+  function startAuto() {
+    if (!autoPlay) return;
+    autoTimer = setInterval(() => goTo(current + 1), autoPlay);
+  }
+  function resetAuto() {
+    clearInterval(autoTimer);
+    startAuto();
+  }
+  startAuto();
+
+  let touchStartX = 0;
+  stage.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  stage.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) { goTo(diff > 0 ? current + 1 : current - 1); resetAuto(); }
+  }, { passive: true });
+
+  const firstVideo = slides[0].querySelector('video');
+  if (firstVideo) firstVideo.play().catch(() => {});
+}
+
+initCarousel('vidStage', 'vidPrev', 'vidNext', 'vidDots', 5000);
+initCarousel('actStage', 'actPrev', 'actNext', 'actDots', 7000);
+
+// ═══ TESTIMONIAL SLIDER ═══
+(function() {
+  const track = document.getElementById('testiTrack');
+  const cards = track.querySelectorAll('.testi-card');
+  const dotsRow = document.getElementById('testiDots');
+  let cur = 0, autoT = null;
+
+  cards.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'testi-dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', 'Ke testimoni ' + (i+1));
+    d.onclick = () => { goTesti(i); resetTesti(); };
+    dotsRow.appendChild(d);
+  });
+
+  function goTesti(n) {
+    cur = (n + cards.length) % cards.length;
+    track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+    dotsRow.querySelectorAll('.testi-dot').forEach((d, i) => d.classList.toggle('active', i === cur));
+  }
+
+  document.getElementById('testiPrev').onclick = () => { goTesti(cur - 1); resetTesti(); };
+  document.getElementById('testiNext').onclick = () => { goTesti(cur + 1); resetTesti(); };
+
+  function startTesti() { autoT = setInterval(() => goTesti(cur + 1), 5000); }
+  function resetTesti() { clearInterval(autoT); startTesti(); }
+
+  let tx = 0;
+  track.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const d = tx - e.changedTouches[0].clientX;
+    if (Math.abs(d) > 40) { goTesti(d > 0 ? cur + 1 : cur - 1); resetTesti(); }
+  }, { passive: true });
+
+  startTesti();
+})();
+
+// ═══ BUKU TAMU ═══
+var GB_KEY = 'omahogel_guestbook_v1';
+
+function gbGetAll() {
+  try { return JSON.parse(localStorage.getItem(GB_KEY) || '[]'); } catch(e) { return []; }
+}
+function gbSaveAll(arr) {
+  try { localStorage.setItem(GB_KEY, JSON.stringify(arr)); } catch(e) {}
+}
+function gbFormatDate(iso) {
+  var d = new Date(iso);
+  return d.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' });
+}
+function gbRender() {
+  var list = document.getElementById('gbList');
+  var empty = document.getElementById('gbEmpty');
+  var loading = document.getElementById('gbLoading');
+  var entries = gbGetAll();
+  loading.style.display = 'none';
+  if (!entries.length) {
+    list.style.display = 'none';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+  list.style.display = 'flex';
+  list.innerHTML = entries.slice().reverse().map(function(e) {
+    var loc = e.country ? ' · ' + e.country : '';
+    return '<div class="gb-entry">' +
+      '<div class="gb-entry-header">' +
+        '<span class="gb-entry-name">🐾 ' + e.name + loc + '</span>' +
+        '<span class="gb-entry-date">' + gbFormatDate(e.date) + '</span>' +
+      '</div>' +
+      '<div class="gb-entry-text">' + e.message + '</div>' +
+    '</div>';
+  }).join('');
+}
+function submitGuestbook() {
+  var nameEl = document.getElementById('gbName');
+  var countryEl = document.getElementById('gbCountry');
+  var msgEl = document.getElementById('gbMsg');
+  var btn = document.getElementById('gbSubmit');
+  var toast = document.getElementById('gbToast');
+  var name = nameEl.value.trim();
+  var country = countryEl.value.trim();
+  var message = msgEl.value.trim();
+  if (!name) { nameEl.focus(); nameEl.style.borderColor = '#E53935'; return; }
+  if (!message) { msgEl.focus(); msgEl.style.borderColor = '#E53935'; return; }
+  nameEl.style.borderColor = '';
+  msgEl.style.borderColor = '';
+  btn.disabled = true;
+  btn.textContent = 'Mengirim...';
+  var entry = { name: name, country: country, message: message, date: new Date().toISOString() };
+  var all = gbGetAll();
+  all.push(entry);
+  gbSaveAll(all);
+  setTimeout(function() {
+    nameEl.value = '';
+    countryEl.value = '';
+    msgEl.value = '';
+    btn.disabled = false;
+    btn.textContent = '✉️ Kirim Pesanku';
+    toast.classList.add('show');
+    setTimeout(function() { toast.classList.remove('show'); }, 3500);
+    gbRender();
+  }, 400);
+}
+gbRender();
+</script>
+</body>
+</html>
