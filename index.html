@@ -448,8 +448,8 @@ footer span { font-weight: 700; color: var(--secondary); }
 <!-- ═══ HERO ═══ -->
 <div class="hero-bg">
   <div class="hero-video-container">
-    <video autoplay muted loop playsinline id="heroVideo">
-      <source src="https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780932632/VID-20260608-WA0035_x8zugk.mp4" type="video/mp4">
+    <video autoplay muted playsinline id="heroVideo">
+      <source src="https://res.cloudinary.com/ddcemiotz/video/upload/q_auto/f_auto/v1781156838/lv_0_20260611121635_xhzlce.mp4" type="video/mp4">
     </video>
   </div>
   <div class="hero-overlay"></div>
@@ -1310,22 +1310,25 @@ Selama enam tahun terakhir, Omah Ogel beroperasi dari sebuah tempat sewa di Depo
 // ═══ HERO VIDEO SWAP ═══
 (function() {
   const videos = [
-    'https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780932632/VID-20260608-WA0035_x8zugk.mp4',
-    'https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780932633/VID-20260608-WA0034_wmc30r.mp4',
-    'https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780975280/Perjalanan_Joy_dari_Mulai_Rescue_sampe_berhasil_di_bawa_pulang.._menjalani_1_x_amputasi_dua_kaki_xamzoc.mp4'
+    'https://res.cloudinary.com/ddcemiotz/video/upload/q_auto/f_auto/v1781156838/lv_0_20260611121635_xhzlce.mp4',
+    'https://res.cloudinary.com/ddcemiotz/video/upload/q_auto/f_auto/v1781156904/lv_0_20260611121356_mv0mhp.mp4',
+    'https://res.cloudinary.com/ddcemiotz/video/upload/q_auto/f_auto/v1781156978/lv_0_20260611122321_arsdas.mp4',
+    'https://res.cloudinary.com/ddcemiotz/video/upload/q_auto/f_auto/v1781157175/lv_0_20260611123209_kmhjjm.mp4',
+    'https://res.cloudinary.com/ddcemiotz/video/upload/q_auto/f_auto/v1781157045/lv_0_20260611122828_er8pir.mp4',
+    'https://res.cloudinary.com/ddcemiotz/video/upload/q_auto/f_auto/v1781157257/lv_0_20260611124436_xvbjdu.mp4'
   ];
   let current = 0;
   const heroVid = document.getElementById('heroVideo');
   if (!heroVid) return;
-  setInterval(() => {
+  // Pastikan video pertama langsung autoplay tanpa jeda gelap
+  heroVid.play().catch(() => {});
+  // Saat satu video selesai diputar penuh, lanjut ke video berikutnya
+  heroVid.addEventListener('ended', () => {
     current = (current + 1) % videos.length;
-    heroVid.style.opacity = '0';
-    setTimeout(() => {
-      heroVid.src = videos[current];
-      heroVid.play().catch(() => {});
-      heroVid.style.opacity = '0.6';
-    }, 600);
-  }, 12000);
+    heroVid.src = videos[current];
+    heroVid.load();
+    heroVid.play().catch(() => {});
+  });
 })();
 
 // ═══ CAROUSEL ═══
